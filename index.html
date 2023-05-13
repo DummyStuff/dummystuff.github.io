@@ -15,15 +15,15 @@
     </head>
     <body>
         <script>
-            function crearArchivoZip() {
-                const nombreZip = 'dummyfiles.zip';
-                const directorio = '/ruta/a/tu/directorio/';
-                const archivos = ['archivo1.txt', 'archivo2.jpg', 'archivo3.pdf', 'archivo4.png'];
+            function createZip() {
+                const zipName = 'dummyfiles.zip';
+                const directory = '/ruta/a/tu/directorio/';
+                const archives = ['archivo1.txt', 'archivo2.jpg', 'archivo3.pdf', 'archivo4.png'];
 
                 const zip = new JSZip();
-                for (const archivo of archivos) {
-                    const rutaCompleta = directorio + archivo;
-                    zip.file(archivo, fetch(rutaCompleta).then(response => response.blob()));
+                for (const archive of archives) {
+                    const route = directory + archive;
+                    zip.file(archive, fetch(route).then(response => response.blob()));
                 }
 
                 zip.generateAsync({ type: 'blob' }).then(blob => {
